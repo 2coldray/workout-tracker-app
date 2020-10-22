@@ -52,6 +52,20 @@ router.post("/api/workouts", (req, res) => {
 });
 
 //Put Route for updating a workout by Id
+router.put("/api/workouts/:id", (req, res) => {
+  db.Workout.findByIdAndUpdate(req.body.id, req.body, { new: true })
+    .then((updatedWorkout) => {
+      res.json(updatedWorkout);
+    })
+    .catch((err) => {
+      console.log(err),
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to update workout",
+        });
+    });
+});
 
 //Delete Workout to be able to delete workout by Id
 
