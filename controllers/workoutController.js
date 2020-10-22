@@ -5,18 +5,35 @@ const db = require("../models");
 
 //Get Route for all Workouts
 router.get("/api/workouts", (req, res) => {
-    db.Workout.find({}).then((foundWorkouts) => {
-        res.json(foundWorkouts)
-    }).catch((err) => {
-        console.log(err);
+  db.Workout.find({})
+    .then((foundWorkouts) => {
+      res.json(foundWorkouts);
+    })
+    .catch((err) => {
+      console.log(err),
         res.json({
-            error: true,
-            data: null,
-            message: "Failed to retrieve all workouts"
+          error: true,
+          data: null,
+          message: "Failed to retrieve all workouts",
         });
     });
+});
 
 //Get Route for specific Workout by Id
+router.get("/api/workouts/:id", (req, res) => {
+  db.Workout.findById(req.params.id)
+    .then((foundWorkout) => {
+      res.json(foundWorkout);
+    })
+    .catch((err) => {
+      console.log(err),
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to retrieve workout",
+        });
+    });
+});
 
 //Post Route for creating Workout
 
