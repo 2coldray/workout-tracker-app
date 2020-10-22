@@ -36,6 +36,20 @@ router.get("/api/workouts/:id", (req, res) => {
 });
 
 //Post Route for creating Workout
+router.post("/api/workouts", (req, res) => {
+  db.Workout.create(req.body)
+    .then((newWorkout) => {
+      res.json(newWorkout);
+    })
+    .catch((err) => {
+      console.log(err),
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to create workout",
+        });
+    });
+});
 
 //Put Route for updating a workout by Id
 
