@@ -27,7 +27,7 @@ const ResistanceSchema = new Schema({
     }
 });
 
-//Export Schema
+//Export Schema/Model
 const Resistance = mongoose.model("Resistance", ResistanceSchema);
 
 module.exports = Resistance;
