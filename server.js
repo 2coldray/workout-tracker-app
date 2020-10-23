@@ -12,6 +12,7 @@ const workoutController = require("./controllers/workoutController");
 //Express Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 //Mongoose Connection
 mongoose.connect(
