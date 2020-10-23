@@ -47,7 +47,9 @@ const WorkoutSchema = new Schema(
 
 //Virtual
 WorkoutSchema.virtual("totalDuration").get(function () {
-  return this.exercises.reduce((total, current) => total + current.duration, 0);
+  return this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
+  }, 0);
 });
 
 //Export Model
