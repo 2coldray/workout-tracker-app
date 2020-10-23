@@ -44,6 +44,9 @@ app.get("/api/config", (req, res) => {
 //Use Controllers
 app.use(workoutController);
 
+//Use Html Routes
+require("./routes/html-routes")(app);
+
 //Listen to Port
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
