@@ -4,40 +4,40 @@ const Schema = mongoose.Schema;
 
 //Make Workout Schema
 const WorkoutSchema = new Schema({
-    day: {
-        type: Date, 
-        default: new Date().setDate(new Date().getDate())
-    },
-    type: {
+  day: {
+    type: Date,
+    default: new Date().setDate(new Date().getDate()),
+  },
+  exercises: [
+    {
+      type: {
         type: String,
         trim: true,
-        required: "Type is required"
-    },
-    name: {
+        required: "Type is required",
+      },
+      name: {
         type: String,
         trim: true,
-        required: "Name is required"
-    },
-    duration: {
+        required: "Name is required",
+      },
+      duration: {
         type: Number,
-        required: true
-    },
-    weight: {
+        required: true,
+      },
+      weight: {
         type: Number,
-        required: true
-    },
-    reps: {
+      },
+      reps: {
         type: Number,
-        required: true
-    },
-    sets: {
+      },
+      sets: {
         type: Number,
-        required: true
-    },
-    distance: {
+      },
+      distance: {
         type: Number,
-        required: true
-    }
+      },
+    },
+  ],
 });
 
 //Export Model
