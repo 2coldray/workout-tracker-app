@@ -53,8 +53,13 @@ router.post("/api/workouts", (req, res) => {
 
 //Put Route for updating a workout by Id
 router.put("/api/workouts/:id", (req, res) => {
-  db.Workout.findByIdAndUpdate(req.body.id, req.body, { new: true })
-    // $push: {exercises: req.body}
+  db.Workout.findByIdAndUpdate(
+    req.body.id,
+    req.body,
+    { $push: { exercises: req.body } },
+    { new: true }
+  )
+    // $push: {exercises: req.body} - needed for route to work properly
     .then((updatedWorkout) => {
       res.json(updatedWorkout);
     })
