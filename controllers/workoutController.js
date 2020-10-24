@@ -19,21 +19,21 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-//Get Route for specific Workout by Id
-router.get("/api/workouts/:id", (req, res) => {
-  db.Workout.findById(req.params.id)
-    .then((foundWorkout) => {
-      res.json(foundWorkout);
-    })
-    .catch((err) => {
-      console.log(err),
-        res.json({
-          error: true,
-          data: null,
-          message: "Failed to retrieve workout",
-        });
-    });
-});
+// //Get Route for specific Workout by Id
+// router.get("/api/workouts/:id", (req, res) => {
+//   db.Workout.findById(req.params.id)
+//     .then((foundWorkout) => {
+//       res.json(foundWorkout);
+//     })
+//     .catch((err) => {
+//       console.log(err),
+//         res.json({
+//           error: true,
+//           data: null,
+//           message: "Failed to retrieve workout",
+//         });
+//     });
+// });
 
 //Post Route for creating Workout
 router.post("/api/workouts", (req, res) => {
@@ -67,22 +67,6 @@ router.put("/api/workouts/:id", (req, res) => {
           error: true,
           data: null,
           message: "Failed to update workout",
-        });
-    });
-});
-
-//Delete Workout to be able to delete workout by Id
-router.delete("/api/workouts/:id", (req, res) => {
-  db.Workout.findByIdAndDelete(req.params.id)
-    .then((deletedWorkout) => {
-      res.json(deletedWorkout);
-    })
-    .catch((err) => {
-      console.log(err),
-        res.json({
-          error: true,
-          data: null,
-          message: "Failed to delete workout",
         });
     });
 });
