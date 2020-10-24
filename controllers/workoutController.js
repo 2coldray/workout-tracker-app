@@ -90,6 +90,21 @@ router.delete("/api/workouts/:id", (req, res) => {
 });
 
 //Need Get route api/range
+router.get("/api/workouts/range", (req, res) => {
+  db.Workout.find({})
+    .limit(7)
+    .then((foundWorkouts) => {
+      res.json(foundWorkouts);
+    })
+    .catch((err) => {
+      console.log(err),
+        res.json({
+          error: true,
+          data: null,
+          message: "failed to retrieve workouts",
+        });
+    });
+});
 
 //Export router
 module.exports = router;
