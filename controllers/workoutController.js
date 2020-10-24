@@ -59,7 +59,6 @@ router.put("/api/workouts/:id", (req, res) => {
     { $push: { exercises: req.body } },
     { new: true }
   )
-    // $push: {exercises: req.body} - needed for route to work properly
     .then((updatedWorkout) => {
       res.json(updatedWorkout);
     })
