@@ -19,21 +19,23 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-// //Get Route for specific Workout by Id
-// router.get("/api/workouts/:id", (req, res) => {
-//   db.Workout.findById(req.params.id)
-//     .then((foundWorkout) => {
-//       res.json(foundWorkout);
-//     })
-//     .catch((err) => {
-//       console.log(err),
-//         res.json({
-//           error: true,
-//           data: null,
-//           message: "Failed to retrieve workout",
-//         });
-//     });
-// });
+//Need Get route api/range
+router.get("/api/workouts/range", (req, res) => {
+  db.Workout.find({})
+    .limit(7)
+    .then((foundWorkouts) => {
+      res.json(foundWorkouts);
+    })
+    .catch((err) => {
+      console.log(err),
+        res.json({
+          error: true,
+          data: null,
+          message: "failed to retrieve workouts",
+        });
+    });
+});
+
 
 //Post Route for creating Workout
 router.post("/api/workouts", (req, res) => {
@@ -67,23 +69,6 @@ router.put("/api/workouts/:id", (req, res) => {
           error: true,
           data: null,
           message: "Failed to update workout",
-        });
-    });
-});
-
-//Need Get route api/range
-router.get("/api/workouts/range", (req, res) => {
-  db.Workout.find({})
-    .limit(7)
-    .then((foundWorkouts) => {
-      res.json(foundWorkouts);
-    })
-    .catch((err) => {
-      console.log(err),
-        res.json({
-          error: true,
-          data: null,
-          message: "failed to retrieve workouts",
         });
     });
 });
