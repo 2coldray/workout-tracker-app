@@ -19,9 +19,11 @@ This what the page looks like after you select the "New Workout Button":
 <img width="1393" alt="Screen Shot 2020-10-23 at 11 47 26 PM" src="https://user-images.githubusercontent.com/60899926/97067388-dcdbe200-158a-11eb-9a5d-60715207accc.png">
 
 This is what Resistance Form looks like if you select Resistance:
+
 <img width="553" alt="Screen Shot 2020-10-23 at 11 49 24 PM" src="https://user-images.githubusercontent.com/60899926/97067392-e107ff80-158a-11eb-8df2-15cf18b0cd57.png">
 
 This is what the Cardio Form looks like if you select Cardio:
+
 <img width="530" alt="Screen Shot 2020-10-23 at 11 50 08 PM" src="https://user-images.githubusercontent.com/60899926/97067393-e5ccb380-158a-11eb-8143-d6321cd0c326.png">
 
 This is what the Workout Dashboard will look like:
